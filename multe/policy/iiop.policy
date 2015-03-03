@@ -1,0 +1,46 @@
+/* AUTOMATICALLY GENERATED ON Fri Feb 20 10:49:09 CET 2015*/
+/* DO NOT EDIT */
+
+grant codeBase "file:///home/luca/javarmi/multe/-" {
+	permission java.lang.RuntimePermission "createSecurityManager";
+	permission java.lang.RuntimePermission "setSecurityManager";
+	permission java.util.PropertyPermission "java.rmi.server.hostname", "read, write";
+	permission java.io.FilePermission "/bin/sh", "execute";
+	permission java.lang.RuntimePermission "exitVM";
+
+	permission java.lang.RuntimePermission "getenv.SERVERIP";
+	permission java.lang.RuntimePermission "getenv.LOCALIP";
+	permission java.util.PropertyPermission "user.name", "read";
+	permission java.util.PropertyPermission "user.country", "read";
+
+	permission java.net.SocketPermission "157.27.139.159:5555", "connect, resolve";
+	permission java.net.SocketPermission "157.27.139.159:8000", "connect, resolve";
+	permission java.net.SocketPermission "157.27.139.159:30000-", "connect, resolve";
+	permission java.net.SocketPermission "157.27.139.159:1098", "connect, resolve";
+	permission java.net.SocketPermission "*:30000-", "accept, resolve";
+	permission java.net.SocketPermission "*:36000-", "accept, resolve";
+
+	permission java.util.PropertyPermission "javax.rmi.ssl.client.enabledCipherSuites", "read";
+	permission java.util.PropertyPermission "javax.rmi.ssl.client.enabledProtocols", "read";
+	//permission java.net.SocketPermission "157.27.139.159:32000", "connect, resolve";
+	
+};
+
+grant codeBase "http://157.27.139.159:8000/multe/-" {
+ 	//permission java.security.AllPermission;
+	permission java.lang.RuntimePermission "createSecurityManager";
+	permission java.lang.RuntimePermission "setSecurityManager";
+	permission java.util.PropertyPermission "java.rmi.server.hostname", "read, write";
+	permission java.io.FilePermission "/bin/sh", "execute";
+	permission java.lang.RuntimePermission "exitVM";
+
+	permission java.lang.RuntimePermission "getenv.SERVERIP";
+	permission java.lang.RuntimePermission "getenv.LOCALIP";
+	permission java.util.PropertyPermission "user.name", "read";
+	permission java.util.PropertyPermission "user.country", "read";
+
+	permission java.net.SocketPermission "*:30000-", "accept, resolve";
+
+	permission java.util.PropertyPermission "javax.rmi.ssl.client.enabledCipherSuites", "read";
+	permission java.util.PropertyPermission "javax.rmi.ssl.client.enabledProtocols", "read";
+};

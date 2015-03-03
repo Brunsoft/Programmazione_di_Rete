@@ -1,0 +1,53 @@
+/* AUTOMATICALLY GENERATED ON Fri Feb 20 10:49:09 CET 2015*/
+/* DO NOT EDIT */
+
+grant codeBase "_CLIENTPROT_CLIENTPATH" {                                           // Dominio di protezione file provenienti da locale	
+	permission java.lang.RuntimePermission "createSecurityManager";
+	permission java.lang.RuntimePermission "setSecurityManager";
+    permission java.lang.RuntimePermission "getenv.SERVERIP";                       // Permesso accedere alla variabile SERVERIP
+	permission java.lang.RuntimePermission "getenv.LOCALIP";                        // Permesso accedere alla variabile LOCALIP
+	permission java.lang.RuntimePermission "exitVM";                                // Permesso di forzare uscita JVM
+
+        // Permessi ai Servizi
+	permission java.net.SocketPermission "_SERVERIP:5555", "connect, resolve";       // COSNaming LoginServer
+	permission java.net.SocketPermission "_SERVERIP:8000", "connect, resolve";       // Codebase
+	permission java.net.SocketPermission "_SERVERIP:30000-", "connect, resolve";     // Porta IIOP Login Server & Porta JRMP Central Server
+	permission java.net.SocketPermission "_SERVERIP:1098", "connect, resolve";       // RMIRegistry Central Server
+	permission java.net.SocketPermission "*:30000-", "accept, resolve";              // Accetta connessioni da tutti gli IP alle porte 
+                                                                                     //  >30000
+        // Permessi SSL
+	permission java.util.PropertyPermission "javax.rmi.ssl.client.enabledCipherSuites", "read";
+	permission java.util.PropertyPermission "javax.rmi.ssl.client.enabledProtocols", "read";
+
+    permission java.util.PropertyPermission "java.rmi.server.hostname", "read, write";      // Permesso di lettura/scrittura proprieta
+    permission java.util.PropertyPermission "user.name", "read";
+	permission java.util.PropertyPermission "user.country", "read";
+    permission java.io.FilePermission "/bin/sh", "execute";
+
+        // Permessi grafici
+    permission java.awt.AWTPermission "showWindowWithoutWarningBanner";	
+	
+};
+
+grant codeBase "_CODEBASE" {                                                  // Dominio protezione dei file provenienti dal codebase
+	permission java.lang.RuntimePermission "createSecurityManager";
+	permission java.lang.RuntimePermission "setSecurityManager";
+    permission java.lang.RuntimePermission "getenv.SERVERIP";                 // Permesso accedere alla variabile SERVERIP
+	permission java.lang.RuntimePermission "getenv.LOCALIP";                  // Permesso accedere alla variabile LOCALIP
+	permission java.lang.RuntimePermission "exitVM";                          // Permesso di forzare uscita JVM
+
+        // Permessi ai Servizi
+	permission java.net.SocketPermission "*:30000-", "accept, resolve";       // Accetta connessioni da tutti gli IP alle porte 
+                                                                              //  >30000
+        // Permessi SSL
+	permission java.util.PropertyPermission "javax.rmi.ssl.client.enabledCipherSuites", "read";
+	permission java.util.PropertyPermission "javax.rmi.ssl.client.enabledProtocols", "read";
+
+    permission java.util.PropertyPermission "java.rmi.server.hostname", "read, write";      					// Permesso di lettura/scrittura proprieta
+    permission java.util.PropertyPermission "user.name", "read";
+	permission java.util.PropertyPermission "user.country", "read";
+    permission java.io.FilePermission "/bin/sh", "execute";
+
+        // Permessi grafici
+    permission java.awt.AWTPermission "showWindowWithoutWarningBanner";	
+};
